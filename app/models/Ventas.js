@@ -1,4 +1,5 @@
 
+const { format } = require('mysql2');
 const { Model } =require('objection'); //llamar model de la libreria objection (hereda las caracteristica para realizar un modelo)
 
 class Ventas extends Model { //creo la herencia del modelo
@@ -11,10 +12,10 @@ class Ventas extends Model { //creo la herencia del modelo
             type: 'object',//object para un dato,array para una lista
             required: ['fecha_venta'],//campos requeridos
             properties: { // estructura de los campos
-                id: {type: 'interger'},
-                cliente_id :{type: 'interger'},
-                vendedor_id :{type: 'interger'},
-                fecha_venta:{type: 'timestamp'}
+                id: {type: 'integer'},
+                cliente_id :{type: 'integer'},
+                vendedor_id :{type: 'integer'},
+                fecha_venta:{type: 'string', format:'date'}
 
             }
         };

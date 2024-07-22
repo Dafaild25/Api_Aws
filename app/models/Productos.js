@@ -11,11 +11,11 @@ class Productos extends Model { //creo la herencia del modelo
             type: 'object',//object para un dato,array para una lista
             required: ['nombre','precio'],//campos requeridos
             properties: { // estructura de los campos
-                id: {type: 'interger'},
+                id: {type: 'integer'},
                 nombre : {type:'string', minLength:1},
                 descripcion: {type:'string', minLength:1},
-                precio:{type:'decimal'},
-                stock : {type:'interger'},
+                precio:{type:'number'},
+                stock : {type:'integer'},
                 
 
             }

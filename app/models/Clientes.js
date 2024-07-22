@@ -11,11 +11,12 @@ class Clientes extends Model { //creo la herencia del modelo
             type: 'object',//object para un dato,array para una lista
             required: ['telefono','email'],//campos requeridos
             properties: { // estructura de los campos
-                id: {type: 'interger'},
+                id: {type: 'integer'},
                 primer_nombre : {type:'string', minLength:1},
                 segundo_nombre : {type:'string', minLength:1},
                 primer_apellido : {type:'string', minLength:1},
                 segundo_apellido : {type:'string', minLength:1},
+                telefono:{type:'string'},
                 email:{type:'string',format:'email'}
 
             }
@@ -26,7 +27,7 @@ class Clientes extends Model { //creo la herencia del modelo
         return await Clientes.query(); // select * from customer
     }
 
-    static async insertarClientes(data){// metodo para insertar clientes
+    static async insertarCliente(data){// metodo para insertar clientes
         return await Clientes.query()
             .insert(data); //insert into customer values ....
     }

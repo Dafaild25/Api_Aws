@@ -3,7 +3,7 @@ const { Model } =require('objection'); //llamar model de la libreria objection (
 
 class Detalle extends Model { //creo la herencia del modelo
     static get tableName(){ // especifica el nombre de la tabla
-        return 'detalles_venta';
+        return 'detalles_ventas';
     }
 
     static get jsonSchema(){ // especifica la estructura de la tabla
@@ -15,7 +15,7 @@ class Detalle extends Model { //creo la herencia del modelo
                 venta_id :{type: 'integer'},
                 producto_id :{type: 'integer'},
                 cantidad:{type: 'integer'},
-                precio:{type:'decimal'}
+                precio:{type:'number'}
 
             }
         };

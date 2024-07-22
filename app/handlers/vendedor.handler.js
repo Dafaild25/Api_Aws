@@ -16,7 +16,7 @@ const listarVendedores = async (req,res)=>{
 
 const insertarVendedor = async(req,res)=>{
     try{
-        const vendedor =await Vendedores.insertarVendedore(req.body); 
+        const vendedor =await Vendedores.insertarVendedor(req.body); 
         //201 para crear
         res.status(201).json(vendedor)
     }catch (error){

@@ -11,7 +11,7 @@ class Vendedores extends Model { //creo la herencia del modelo
             type: 'object',//object para un dato,array para una lista
             required: ['telefono','email'],//campos requeridos
             properties: { // estructura de los campos
-                id: {type: 'interger'},
+                id: {type: 'integer'},
                 primer_nombre : {type:'string', minLength:1},
                 segundo_nombre : {type:'string', minLength:1},
                 primer_apellido : {type:'string', minLength:1},
@@ -26,7 +26,7 @@ class Vendedores extends Model { //creo la herencia del modelo
         return await Vendedores.query(); // select * from customer
     }
 
-    static async insertarVendedore(data){// metodo para insertar clientes
+    static async insertarVendedor(data){// metodo para insertar clientes
         return await Vendedores.query()
             .insert(data); //insert into customer values ....
     }
