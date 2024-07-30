@@ -15,7 +15,7 @@ class Ventas extends Model { //creo la herencia del modelo
                 id: {type: 'integer'},
                 cliente_id :{type: 'integer'},
                 vendedor_id :{type: 'integer'},
-                fecha_venta:{type: 'string', format:'date'}
+                fecha_venta:{type: 'string', format:'date-time'}
 
             }
         };
@@ -26,8 +26,7 @@ class Ventas extends Model { //creo la herencia del modelo
     }
 
     static async insertarVenta(data){// metodo para insertar clientes
-        return await Ventas.query()
-            .insert(data); //insert into customer values ....
+        return await Ventas.query().insert(data); //insert into customer values ....
     }
 
 
