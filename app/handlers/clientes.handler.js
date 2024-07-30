@@ -13,6 +13,19 @@ const listarClientes = async (req,res)=>{
         res.status(500).json({error: error.message })
     }
 }
+const obtenerCliente = async (req, res) => {
+    try {
+        const cliente = await Clientes.getClienteById(req.params.id);
+        if (cliente) {
+            res.json(cliente);
+        } else {
+            res.status(404).json({ error: 'Cliente no encontrado' });
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 
 const insertarCliente = async(req,res)=>{
     try{
@@ -29,5 +42,6 @@ const insertarCliente = async(req,res)=>{
 module.exports ={
     listarClientes,
     insertarCliente,
+    obtenerCliente ,
 
 }

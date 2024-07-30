@@ -12,8 +12,10 @@ const router = express.Router();
 
 //registrar las rutas
 //rutas de cliente
-router.get('/clientes', clienteHandler.listarClientes) //obtener cliente
+router.get('/clientes', clienteHandler.listarClientes) //obtener clientes
+router.get('/cliente/:id', clienteHandler.obtenerCliente) //obtener clientes
 router.post('/clientes', clienteHandler.insertarCliente)// insertar cliente
+
 
 router.get('/vendedores', vendedorHandler.listarVendedores) //obtener 
 router.post('/vendedores', vendedorHandler.insertarVendedor)// insertar 

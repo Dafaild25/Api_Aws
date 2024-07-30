@@ -27,6 +27,10 @@ class Clientes extends Model { //creo la herencia del modelo
         return await Clientes.query(); // select * from customer
     }
 
+    static async getClienteById(id) {
+        return await Clientes.query().findById(id);
+    }
+
     static async insertarCliente(data){// metodo para insertar clientes
         return await Clientes.query()
             .insert(data); //insert into customer values ....
