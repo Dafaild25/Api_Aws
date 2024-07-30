@@ -18,6 +18,7 @@ router.post('/clientes', clienteHandler.insertarCliente)// insertar cliente
 
 
 router.get('/vendedores', vendedorHandler.listarVendedores) //obtener 
+router.get('/vendedor/:id', vendedorHandler.obtenerVendedor) //obtener 
 router.post('/vendedores', vendedorHandler.insertarVendedor)// insertar 
 
 router.get('/productos', productoHandler.listarProductos) //obtener 

@@ -13,6 +13,18 @@ const listarVendedores = async (req,res)=>{
         res.status(500).json({error: error.message })
     }
 }
+const obtenerVendedor = async (req, res) => {
+    try {
+        const vendedor = await Vendedores.getVendedorById(req.params.id);
+        if (vendedor) {
+            res.json(vendedor);
+        } else {
+            res.status(404).json({ error: 'Vendedor no encontrado' });
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
 
 const insertarVendedor = async(req,res)=>{
     try{
@@ -29,5 +41,6 @@ const insertarVendedor = async(req,res)=>{
 module.exports ={
     listarVendedores,
     insertarVendedor,
+    obtenerVendedor,
 
 }

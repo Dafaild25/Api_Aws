@@ -26,6 +26,10 @@ class Vendedores extends Model { //creo la herencia del modelo
         return await Vendedores.query(); // select * from customer
     }
 
+    static async getVendedorById(id) {
+        return await Vendedores.query().findById(id);
+    }
+
     static async insertarVendedor(data){// metodo para insertar clientes
         return await Vendedores.query()
             .insert(data); //insert into customer values ....
