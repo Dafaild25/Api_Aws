@@ -15,7 +15,8 @@ class Detalle extends Model { //creo la herencia del modelo
                 venta_id :{type: 'integer'},
                 producto_id :{type: 'integer'},
                 cantidad:{type: 'integer'},
-                precio:{type:'number'}
+                precio:{type:'number'},
+                descripcion: { type: 'string', maxLength: 255 },
 
             }
         };

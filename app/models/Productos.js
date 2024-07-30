@@ -15,6 +15,7 @@ class Productos extends Model { //creo la herencia del modelo
                 nombre : {type:'string', minLength:1},
                 descripcion: {type:'string', minLength:1},
                 precio:{type:'number'},
+                proveedor: { type: 'string', maxLength: 255 },
                 stock : {type:'integer'},
                 
 
